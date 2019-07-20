@@ -10,17 +10,17 @@ import { User, Iuser } from '../interfaces/iuser';
 })
 export class CreateComponent implements OnInit {
 
-  constructor(private serv: AuthServiceService) { }
-
-  ngOnInit() {
-  }
-
   createUserForm = new FormGroup({
     username: new FormControl(''),
     fname: new FormControl(''),
     lname: new FormControl(''),
     age: new FormControl('')
   });
+
+  constructor(private serv: AuthServiceService) { }
+
+  ngOnInit() {
+  }
 
   addUser() {
     const user: Iuser = this.createUserForm.value;
