@@ -1,0 +1,13 @@
+<div id="loginForm" align="center">
+    <form [formGroup]="loginForm">
+        <input type="text" placeholder="username" formControlName="username">
+        <button (click)="findUser();">Login</button>
+    </form>
+    <button (click)="findAll();">All Users</button>
+</div>
+<div *ngIf="oneUser" id="displayUser" align="center" class="card">
+    <!-- <p *ngFor="let item of userKeys">{{item}}: {{oneUser[item]}}</p> -->
+    <p>username: {{oneUser.username}}</p>
+    <p>first name: {{oneUser.fname}}</p>
+    <p>last name: {{oneUser.lname}}</p>
+</div>

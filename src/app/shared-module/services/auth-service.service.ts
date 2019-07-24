@@ -10,10 +10,17 @@ export class AuthServiceService {
 
   constructor(private req: DataRequestService) { }
 
-  url: string = "localhost:8080";
-
   createUser<Iuser>(user: Iuser): Observable<Iuser> {
-    return this.req.post<Iuser>(this.url+'/user/create', user);
+    return this.req.post<Iuser>(this.req.url+'/user/create', user);
+  }
+
+  getAllUsers(): Observable<Iuser> {
+    return this.req.get<Iuser>(this.req.url+'/user/all');
+  }
+
+  getOneUser(username: Iuser): Observable<Iuser> {
+    let urlString = this.req.url+'/user/getUsername?username=' + username.username;
+    return this.req.get<Iuser>(urlString);
   }
 
 }
