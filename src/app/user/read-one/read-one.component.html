@@ -1,13 +1,21 @@
 <div id="loginForm" align="center">
     <form [formGroup]="loginForm">
         <input type="text" placeholder="username" formControlName="username">
-        <button (click)="findUser();">Login</button>
+        <button class="smallButton" (click)="findUser();">Login</button>
     </form>
-    <button (click)="findAll();">All Users</button>
+    <button class="smallButton" (click)="findAll();">All Users</button>
 </div>
 <div *ngIf="oneUser" id="displayUser" align="center" class="card">
-    <!-- <p *ngFor="let item of userKeys">{{item}}: {{oneUser[item]}}</p> -->
-    <p>username: {{oneUser.username}}</p>
-    <p>first name: {{oneUser.fname}}</p>
-    <p>last name: {{oneUser.lname}}</p>
+    <p>Username: {{oneUser.username}}</p>
+    <p>First name: {{oneUser.fname}}</p>
+    <p>Last name: {{oneUser.lname}}</p>
+    <p>Age: {{oneUser.age}}</p>
+    <button class="smallButton" (click) = "deleteCurrent();">Delete User</button>
+    <button class="smallButton" (click) = "editCurrent();">Edit</button>
+    <div *ngIf="updateOne">
+        
+    </div>
+</div>
+<div align="center">
+    <button class="smallButton" (click) = "goToCreate();">Create User</button>
 </div>
