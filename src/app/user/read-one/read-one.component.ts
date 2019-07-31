@@ -25,6 +25,12 @@ export class ReadOneComponent implements OnInit {
     username: new FormControl('')
   });
 
+  updateForm = new FormGroup({
+    fname: new FormControl(''),
+    lname: new FormControl(''),
+    age: new FormControl('')
+  });
+
   findUser() {
     this.serv.getOneUser(this.loginForm.value).subscribe((x) =>{
       console.log(x);
@@ -47,11 +53,16 @@ export class ReadOneComponent implements OnInit {
   }
 
   editCurrent() {
-
+    this.updateOne = true;
   }
 
   updateCurrent() {
-    
+
+  }
+
+  goFalse() {
+    this.updateOne = false;
+    this.findUser();
   }
 
   goToCreate () {

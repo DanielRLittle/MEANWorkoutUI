@@ -13,7 +13,13 @@
     <button class="smallButton" (click) = "deleteCurrent();">Delete User</button>
     <button class="smallButton" (click) = "editCurrent();">Edit</button>
     <div *ngIf="updateOne">
-        
+        <form [formGroup]="updateForm">
+            <input type="text" placeholder="first name" formControlName="fname">
+            <input type="text" placeholder="last name" formControlName="lname">
+            <input type="number" placeholder="age" formControlName="age">
+            <button class="smallButton" (click) = "updateCurrent();;">Save Changes</button>
+            <button class="smallButton" (click) = "goFalse();">Cancel Changes</button>
+        </form>
     </div>
 </div>
 <div align="center">
