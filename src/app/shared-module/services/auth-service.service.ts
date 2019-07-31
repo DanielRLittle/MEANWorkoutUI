@@ -27,4 +27,9 @@ export class AuthServiceService {
     let urlString = this.req.hostUrl+'/user/delete?id='+id;
     return this.req.delete<Iuser>(urlString);
   }
+
+  updateCurrentUser(username: string, body: Iuser): Observable<Iuser> {
+    let urlString = this.req.hostUrl+'/user/updateUser' + username;
+    return this.req.put<Iuser>(urlString, body);
+  }
 }

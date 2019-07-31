@@ -57,7 +57,9 @@ export class ReadOneComponent implements OnInit {
   }
 
   updateCurrent() {
-
+    const user: Iuser = this.updateForm.value;
+    this.serv.updateCurrentUser(this.oneUser.username, user);
+    this.findUser();
   }
 
   goFalse() {

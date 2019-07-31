@@ -23,4 +23,8 @@ export class DataRequestService {
   delete<T>(url: string): Observable<T> {
     return this.http.delete<T>(url);
   }
+
+  put<T>(url: string, body: T): Observable<T> {
+    return this.http.put<T>(url, body);
+  }
 }
